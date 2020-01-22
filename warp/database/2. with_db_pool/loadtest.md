@@ -1,12 +1,12 @@
 # The result from loadtest
 
-There are errors but few.
+No errors and reasonably fast. It was definitely better to reuse connection(More than 22 times better). It seems that the reason of errors was because the server had to accecpt every request to connect to database.
 
 ```console
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
-INFO Requests: 110, requests per second: 22, mean latency: 2097.6 ms
-INFO Requests: 227, requests per second: 23, mean latency: 4056.5 ms
-INFO Requests: 370, requests per second: 29, mean latency: 4792.6 ms
+INFO Requests: 2466, requests per second: 498, mean latency: 86.1 ms
+INFO Requests: 5477, requests per second: 603, mean latency: 476.4 ms
+INFO Requests: 8584, requests per second: 620, mean latency: 821.9 ms
 INFO
 INFO Target URL:          http://0.0.0.0:8000/api/post/v1
 INFO Max time (s):        20
@@ -14,20 +14,16 @@ INFO Concurrency level:   10
 INFO Agent:               keepalive
 INFO Requests per second: 2000
 INFO
-INFO Completed requests:  508
-INFO Total errors:        2
-INFO Total time:          20.027096512 s
-INFO Requests per second: 25
-INFO Mean latency:        5206.3 ms
+INFO Completed requests:  11310
+INFO Total errors:        0
+INFO Total time:          20.003117999999997 s
+INFO Requests per second: 565
+INFO Mean latency:        745 ms
 INFO
 INFO Percentage of the requests served within a certain time
-INFO   50%      4781 ms
-INFO   90%      9924 ms
-INFO   95%      10552 ms
-INFO   99%      11476 ms
-INFO  100%      19084 ms (longest request)
-INFO
-INFO  100%      19084 ms (longest request)
-INFO
-INFO    -1:   2 errors
+INFO   50%      177 ms
+INFO   90%      763 ms
+INFO   95%      5712 ms
+INFO   99%      8309 ms
+INFO  100%      9276 ms (longest request)
 ```
