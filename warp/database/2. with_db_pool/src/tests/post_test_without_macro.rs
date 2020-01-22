@@ -3,12 +3,6 @@ use warp::Filter;
 use crate::{
     handlers::post_handler,
     routes::post_route,
-    // macros
-    list_posts,
-    get_post,
-    // create_post,
-    // update_post,
-    // delete_post,
 };
 
 // $cargo test -- --nocapture if you want to use println! etc.
@@ -25,10 +19,13 @@ mod tests {
 
     #[tokio::test]
     async fn list_post() {
+        let list_post_api = post_route::list()
+            .and_then(post_handler::list);
+
         let res = warp::test::request()
             .method("GET")
             .path("/api/post/v1") // 1. [Client] - Define request(path with datas) until this
-            .reply(&list_posts!()) // 2. [Server] - How will you respond to it? With what?
+            .reply(&list_post_api) // 2. [Server] - How will you respond to it? With what?
             .await;
 
         assert_eq!(res.status(), 200, "Should return 200 OK.");
@@ -37,10 +34,13 @@ mod tests {
 
     #[tokio::test]
     async fn get_post() {
+        let get_post_api = post_route::get()
+            .and_then(post_handler::get);
+
         let res = warp::test::request()
             .method("GET")
             .path("/api/post/v1/1")
-            .reply(&get_post!())
+            .reply(&get_post_api)
             .await;
 
         assert_eq!(res.status(), 200, "Should return 200 OK.");
