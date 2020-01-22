@@ -1,39 +1,13 @@
 use warp;
 
-use crate::models::post::{
-    PostList,
-    Post,
-    NewPost,
+use crate::{
+    models::post::{
+        PostList,
+        Post,
+        NewPost,
+    },
+    POOL,
 };
-
-use dotenv::dotenv;
-use std::env;
-
-// https://github.com/sfackler/r2d2https://github.com/sfackler/r2d2
-// https://docs.diesel.rs/diesel/r2d2/struct.ConnectionManager.html
-// https://docs.diesel.rs/diesel/pg/struct.PgConnection.html
-use diesel::r2d2::ConnectionManager;
-use diesel::PgConnection;
-
-// https://docs.rs/lazy_static/1.4.0/lazy_static/
-// https://www.google.com/search?&q=why+use+lazy_static+rust
-pub type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
-lazy_static! {
-    static ref POOL: Pool = {
-        // DATABASE_URL=postgres://postgres:postgres@localhost/warp
-        dotenv().ok();
-
-        let database_url = env::var("DATABASE_URL")
-            .expect("DATABASE_URL must be set.");
-
-        // create db connection pool
-        let manager = ConnectionManager::<PgConnection>::new(database_url);
-        let pool: Pool = r2d2::Pool::builder()
-            .build(manager)
-            .expect("Failed to create pool.");
-        pool
-    };
-}
 
 // Use this to debug and verify API chaining work or not.
 // pub async fn repeat(input: String) -> Result<impl warp::Reply, warp::Rejection> {
