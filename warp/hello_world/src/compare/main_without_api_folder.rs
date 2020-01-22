@@ -9,8 +9,6 @@ mod routes;
 // Files in handlers/ are what implements "Result<impl warp::Reply, warp::Rejection>"
 // It will be similar to controllers in Express and you will edit the folder most of time with models/
 mod handlers; // This is the payload of this framework.
-mod api; // hello! is usable with this in main.rs and tests/hello_test.rs
-
 use self::{
     routes::{
         hello_route,
@@ -18,11 +16,21 @@ use self::{
     handlers::{
         hello_handler
     },
+
 };
 
 // It will only work with $cargo test
 // For example, $cargo test hello -- --nocapture
 #[cfg(test)] mod tests;
+
+// https://stackoverflow.com/questions/29068716/how-do-you-use-a-macro-from-inside-its-own-crate
+#[macro_export]
+macro_rules! hello {
+    () => {
+        hello_route::hello()
+        .and_then(hello_handler::hello)
+    }
+}
 
 #[tokio::main]
 async fn main() {
@@ -37,7 +45,6 @@ async fn main() {
     // (You can see that in main_function.rs)
 
     let hello = hello!();
-    // Instead of this in main.rs and tests/hello_test.rs
     // let hello = hello_route::hello()
     //     .and_then(hello_handler::hello);
 
