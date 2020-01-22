@@ -218,10 +218,10 @@ Send messages with them if you need a immediate help.
 
 ## How to contribute
 
-This is a personal repository. But, it is getting a little bit more attentions recently. So, contirbution is welcome. There is no versioning here because I upload only working projects.
+This is a personal repository. But, it is getting a little bit more attentions recently. So, contirbution is welcome. 
 
-If you don't like that, fork and start your own ones.
+There is no versioning here because I upload only working projects working and reusable enough.
 
 I am not a native speaker so there will be grammatical or type errors. You can help me to correct them. 
 
-**You can suggest your code instead of deprecated ones, imporve existing codes or ask the author to include your projects.
+**You can suggest your code instead of deprecated ones, imporve existing codes or ask the author to include your projects.**

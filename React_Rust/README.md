@@ -37,6 +37,34 @@ Webpack Dev server is based on Express. Therefore, prototype with it first. We w
 ./express.bash
 ```
 
+The result form loadtest. No error and fast.
+
+```console
+INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+INFO Requests: 1769, requests per second: 354, mean latency: 578.9 ms
+INFO Requests: 5636, requests per second: 774, mean latency: 786.2 ms
+INFO Requests: 10162, requests per second: 906, mean latency: 1392.7 ms
+INFO 
+INFO Target URL:          http://0.0.0.0:8000/
+INFO Max time (s):        20
+INFO Concurrency level:   10
+INFO Agent:               keepalive
+INFO Requests per second: 2000
+INFO 
+INFO Completed requests:  14669
+INFO Total errors:        0
+INFO Total time:          20.001914555 s
+INFO Requests per second: 733
+INFO Mean latency:        1012.1 ms
+INFO 
+INFO Percentage of the requests served within a certain time
+INFO   50%      1052 ms
+INFO   90%      1537 ms
+INFO   95%      1629 ms
+INFO   99%      1974 ms
+INFO  100%      8906 ms (longest request)
+```
+
 ### Warp
 
 ```console
