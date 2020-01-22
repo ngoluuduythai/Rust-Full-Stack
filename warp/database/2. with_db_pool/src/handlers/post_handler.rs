@@ -6,7 +6,7 @@ use crate::{
         Post,
         NewPost,
     },
-    POOL,
+    db::postgresql::POOL,
 };
 
 // Use this to debug and verify API chaining work or not.
