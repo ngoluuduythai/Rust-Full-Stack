@@ -20,6 +20,7 @@ use diesel::PgConnection;
 pub type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
 lazy_static! {
     static ref POOL: Pool = {
+        // DATABASE_URL=postgres://postgres:postgres@localhost/warp
         dotenv().ok();
 
         let database_url = env::var("DATABASE_URL")

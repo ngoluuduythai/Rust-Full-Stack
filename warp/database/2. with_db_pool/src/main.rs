@@ -25,7 +25,6 @@ extern crate diesel;
 
 mod schema;
 mod models;
-mod db_connection;
 
 // It will only work with $cargo test
 // For example, $cargo test list_post -- --nocapture
