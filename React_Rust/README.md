@@ -37,7 +37,7 @@ Webpack Dev server is based on Express. Therefore, prototype with it first. We w
 ./express.bash
 ```
 
-The result form loadtest. No error and fast.
+The result form loadtest. No errors but mean latency is problem?
 
 ```console
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
