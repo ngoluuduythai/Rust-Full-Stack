@@ -1,9 +1,9 @@
-// 1. First approach with lazy_static fail with private type again.
+// 1. First approach with lazy_static fail with private type.
 
 // The type becomes very complicated.
 // The author must have his own reason to make it(warp::filter) private.
 
-// module `filter` is privat
+// module `filter` is private
 // error: module `filter` is private
 
 // `impl Trait` in type aliases is unstable
@@ -13,7 +13,7 @@
 // `impl Trait` not allowed outside of function and inherent method return typesrustc(E0562)
 // `impl Trait` not allowed outside of function and inherent method return types
 
-// help: add `#![feature(impl_trait_in_bindings)]` to the crate attributes to 
+// help: add `#![feature(impl_trait_in_bindings)]` to the crate attributes to
 
 // use warp::{
 //     filters::BoxedFilter,
@@ -29,7 +29,22 @@
 //     };
 // }
 
-// 2. Use macro then.
+// 2. Use function but fail again with type problems.
+
+// note: expected struct `warp::filter::boxed::BoxedFilter<()>`
+//   found struct `warp::filter::boxed::BoxedFilter<(_,)>`
+
+// `_` is not allowed within types on item signatures
+// not allowed in type signatures
+
+// fn json_body() -> BoxedFilter<(_,)> {
+//     // path! macro to assume a path::end() by default, with explicit / .. to allow building a prefix
+//     // path!("api" / "post" / "v1" ) // With v2.0 It won't work
+//     warp::body::content_length_limit(1024 * 16).and(warp::body::json())
+//         .boxed()
+// }
+
+// 3. Use macro then to ignore it.
 
 #[macro_export]
 macro_rules! json_body {
