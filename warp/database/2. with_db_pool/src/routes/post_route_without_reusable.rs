@@ -13,15 +13,7 @@ use crate::{
             NewPost,
         }
     },
-    json_body,
 };
-
-// It won't work easily. Just import it from crate(main.rs) and make it global
-// If you don't want to you see the errors here.
-// https://github.com/rust-lang/rust/issues/57966
-// use super::reusable::{
-//     json_body,
-// };
 
 // Use this to debug and verify API chaining work or not.
 // pub fn repeat() -> BoxedFilter<(String, )> {
@@ -56,18 +48,22 @@ pub fn get() -> BoxedFilter<(i32, )> {
 }
 
 pub fn create() -> warp::filters::BoxedFilter<(NewPost,)> {
+    let json_body = warp::body::content_length_limit(1024 * 16).and(warp::body::json());
+
     warp::post()
         .and(path_prefix())
         .and(warp::path::end())
-        .and(json_body!())
+        .and(json_body)
         .boxed()
 }
 
 pub fn update() -> warp::filters::BoxedFilter<(i32, NewPost,)> {
+    let json_body = warp::body::content_length_limit(1024 * 16).and(warp::body::json());
+
     warp::put()
         .and(path_prefix())
         .and(warp::path::param::<i32>())
-        .and(json_body!())
+        .and(json_body)
         .boxed()
 }
 
