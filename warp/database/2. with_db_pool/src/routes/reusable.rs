@@ -3,6 +3,18 @@
 // The type becomes very complicated.
 // The author must have his own reason to make it(warp::filter) private.
 
+// module `filter` is privat
+// error: module `filter` is private
+
+// `impl Trait` in type aliases is unstable
+
+// note: for more information, see https://github.com/rust-lang/rust/issues/63063
+// help: add `#![feature(type_alias_impl_trait)]` to the crate attributes to enablerustc(E0658)
+// `impl Trait` not allowed outside of function and inherent method return typesrustc(E0562)
+// `impl Trait` not allowed outside of function and inherent method return types
+
+// help: add `#![feature(impl_trait_in_bindings)]` to the crate attributes to 
+
 // use warp::{
 //     filters::BoxedFilter,
 //     path,
