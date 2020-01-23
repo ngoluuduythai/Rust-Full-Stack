@@ -36,7 +36,7 @@ async fn main() {
     // But, it becomes very difficult to type and some of them to make it work are private and shows unstable warning.
     // (You can see that in main_function.rs)
 
-    let hello = hello!();
+    // hello!();
     // Instead of this in main.rs and tests/hello_test.rs
     // let hello = hello_route::hello()
     //     .and_then(hello_handler::hello);
@@ -55,7 +55,7 @@ async fn main() {
     //    .map(|name| format!("Hello, {}!", name)); // 2. Compare it to the handlers/hello_handler.rs
 
     // Refer to https://github.com/steadylearner/Rust-Full-Stack/blob/master/microservices_with_docker/warp_client/src/main.rs
-    let end = hello.with(warp::log("hello"));
+    let end = hello!().with(warp::log("hello"));
 
     println!("\nRust Warp Server ready at {}", blue.apply_to(&target));
     println!("Use $curl 0.0.0.0:8000/hello/www.steadylearner.com to test the end point.");

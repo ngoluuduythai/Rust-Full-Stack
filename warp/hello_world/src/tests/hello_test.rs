@@ -19,14 +19,13 @@ mod tests {
     // Refer to curl commands in main.rs
     #[tokio::test]
     async fn hello() {
-        let hello = hello!();
         // let hello = hello_route::hello()
         //     .and_then(hello_handler::hello);
 
         let res = warp::test::request()
             .method("GET")
             .path("/hello/www.steadylearner.com") // 1. [Client] - Define request(path with datas) until this
-            .reply(&hello) // 2. [Server] - How will you respond to it? With what?
+            .reply(&hello!()) // 2. [Server] - How will you respond to it? With what?
             .await;
 
         assert_eq!(res.status(), 200, "Should return 200 OK.");
