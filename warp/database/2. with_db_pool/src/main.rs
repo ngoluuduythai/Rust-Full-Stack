@@ -15,8 +15,8 @@ use self::{
     handlers::{
         post_handler
     },
-
 };
+mod api; // With this, you can use macros in main.rs and tests/
 
 #[macro_use]
 extern crate lazy_static;
@@ -26,8 +26,6 @@ extern crate diesel;
 mod schema;
 mod models;
 mod db;
-
-mod api; // With this, you can use macros in main.rs and tests/
 
 // It will only work with $cargo test
 // For example, $cargo test list_post -- --nocapture

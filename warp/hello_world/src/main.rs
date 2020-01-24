@@ -33,7 +33,8 @@ async fn main() {
     // GET /hello/www.steadylearner.com => 200 OK with body "Hello, www.steadylearner.com!"
     // $curl 0.0.0.0:8000/hello/www.steadylearner.com
     // [Note] - You may want to extract this to the function instead of macro and make it reusable for tests/ folder.
-    // But, it becomes very difficult to type and some of them to make it work are private and shows unstable warning.
+    // But, it becomes very difficult to type the codes. Some of them are defined as private by the author. 
+    // Compiler also shows unstable warning.
     // (You can see that in main_function.rs)
 
     // hello!();
