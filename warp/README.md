@@ -8,3 +8,7 @@
 
 1. https://github.com/JasonShin/fp-core.rs
 2. https://hoverbear.org/blog/reading-rust-function-signatures/
+3. https://medium.com/@jesterxl/real-world-uses-of-tacit-programming-part-1-of-2-f2a0c3f9e00c
+4. https://medium.com/@jesterxl/real-world-uses-of-tacit-programming-part-2-of-2-6422da10dc47
+5. https://stevedonovan.github.io/rustifications/2018/08/18/rust-closures-are-hard.html
+6. https://llogiq.github.io/2017/06/01/perf-pitfalls.html
