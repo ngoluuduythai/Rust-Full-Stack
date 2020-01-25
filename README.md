@@ -74,6 +74,8 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use Docker commands]: https://www.steadylearner.com/blog/read/How-to-use-Docker-commands
 [How to use Docker with Rust]: https://www.steadylearner.com/blog/read/How-to-use-Docker-with-Rust
 
+[How to use Rust Warp]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Warp
+
 [donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
 <!-- / -->
@@ -129,8 +131,8 @@ You can **like** and share it with others if you want more contents similar to t
 
 ## Warp
 
-1. [Start "Hello, World" project with handlers/, routes/, tests/ etc.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/warp/hello_world)
-2. [Use Warp with React single page app.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/React_Rust/server/warp)
+1. [How to use Rust Warp]
+2. [Use it with React single page app.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/React_Rust/server/warp)
 3. [CRUD REST API example with a database integration.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/warp/database)
 
 ## Frontend
