@@ -13,3 +13,4 @@ tokio = { version = "0.2", features = ["rt-threaded", "time", "stream", "fs", "m
 futures = { version = "0.3", default-features = false, features = ["alloc"]}
 # Help users to easily click the target localhost.
 console = "0.9.1"
+pretty_env_logger = "0.3.1"

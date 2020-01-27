@@ -16,6 +16,8 @@ use console::Style;
 
 #[tokio::main]
 async fn main() {
+    pretty_env_logger::init();    
+
     let target: String = "0.0.0.0:8000".parse().unwrap();
     let blue = Style::new()
         .blue();
@@ -35,18 +37,30 @@ async fn main() {
     // dir already includes GET / ...
     // (You don't have to prefix warp::get("/")" here)
 
-    // They all work manually visiting them with local browser and CURL.
+    // They all work when manually visiting them with a local browser and CURL.
     // $curl 0.0.0.0:8000/vendors.js
     // $curl 0.0.0.0:8000/main.js
     // $curl 0.0.0.0:8000/main.css
-    // $curl 0.0.0.0:8000/main.index.html
+    // $curl 0.0.0.0:8000/index.html
     // $curl 0.0.0.0:8000/src/images/rust-chat-app.png
     let public_files = warp::fs::dir("./public/");
 
     // GET / => ./public/index.html
     // GET /public/... => ./public/..
-    let routes = single_page_app.or(public_files);
 
+    // https://github.com/seanmonstar/warp/issues/420
+    
+    // First attempt to find the errors with its author
+    // $RUST_LOG=warp_react=info cargo run --release to find the origin of 404 errors from loadtest.
+    // let routes = single_page_app.or(public_files).with(warp::log("warp_react"));
+
+    // With $RUST_LOG=warp::filters::fs=info cargo run --release again.
+    let routes = single_page_app.or(public_files).with(warp::log("warp::filters::fs"));
+    // Could find them with more details from fs module from its API
+    // INFO  warp::filters::fs > 127.0.0.1:59704 "GET / HTTP/1.1" 200 "-" "loadtest/4.0.0" 295.867072ms
+    // ERROR warp::filters::fs > file open error (path="./public/index.html"): Too many open files (os error 24) 
+
+    
     println!("\nRust Warp Server ready at {}", blue.apply_to(&target));
     println!("Use $curl http://0.0.0.0:8000 to test the end point.");
 
