@@ -110,7 +110,7 @@ INFO Requests: 27364, requests per second: 1597, mean latency: 5 ms
 
 2. Memory usage
 
-**37.44 Mb **
+**37.44 Mb**
 
 ### Rocket
 
