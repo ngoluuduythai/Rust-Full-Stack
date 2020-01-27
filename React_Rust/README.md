@@ -37,7 +37,9 @@ Webpack Dev server is based on Express. Therefore, prototype with it first. We w
 ./express.bash
 ```
 
-The result form loadtest. No errors but mean latency is problem?
+1. The result form loadtest 
+
+No errors but mean latency is problem?
 
 ```console
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
@@ -65,13 +67,19 @@ INFO   99%      1974 ms
 INFO  100%      8906 ms (longest request)
 ```
 
+2. Memory usage
+
+**113 MB**
+
 ### Warp
 
 ```console
 ./warp.bash
 ```
 
-The result from loadtest. Some errors but reasonable speed.
+1. The result from loadtest
+
+Some errors and reasonable speed.
 
 ```console
 INFO Requests: 1086, requests per second: 216, mean latency: 133.9 ms
@@ -103,6 +111,10 @@ INFO
 INFO   404:   492 errors
 ```
 
+2. Memory usage
+
+**4.63 Mb**
+
 ### Rocket
 
 Use it to test you can deploy React Rocket application to AWS. Then, you should separate the project. Use **/static/<file..>** instead of current **/<file..>** in **routes/static_files.rs** to serve static files. It will help the Rocket server not to show errors from it.
@@ -119,7 +131,9 @@ Use it to test you can deploy React Rocket application to AWS. Then, you should 
 ./actix.bash
 ```
 
-The result from loadtest. No errors and very fast.
+1. The result from loadtest
+
+No errors and very fast.
 
 ```console
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
@@ -147,6 +161,10 @@ INFO   99%      75 ms
 INFO  100%      110 ms (longest request)
 ```
 
+2. Memory usage.
+
+**13 Mb**
+
 ### Restify
 
 ```console
@@ -159,7 +177,9 @@ INFO  100%      110 ms (longest request)
 ./golang.bash
 ```
 
-The reults from loadtest. It is very fast and no errors. It is made for this.
+1. The reults from loadtest 
+
+It is very fast and no errors. It is made for this.
 
 ```console
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
@@ -187,6 +207,9 @@ INFO   99%      19 ms
 INFO  100%      339 ms (longest request)
 ```
 
+2. Memory usage
+
+**231 Mb**
 
 ### Vibora
 
