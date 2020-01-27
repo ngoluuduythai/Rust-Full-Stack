@@ -79,13 +79,13 @@ INFO  100%      8906 ms (longest request)
 
 1. The result from loadtest
 
-Some errors and reasonable speed.
+The best result.
 
 ```console
-INFO Requests: 1086, requests per second: 216, mean latency: 133.9 ms
-INFO Requests: 2548, requests per second: 295, mean latency: 582.9 ms
-INFO Requests: 4011, requests per second: 293, mean latency: 1354.5 ms
-INFO Errors: 115, accumulated errors: 115, 2.9% of total requests
+INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+INFO Requests: 3832, requests per second: 767, mean latency: 8.3 ms
+INFO Requests: 11189, requests per second: 1473, mean latency: 5.2 ms
+INFO Requests: 19382, requests per second: 1638, mean latency: 4.8 ms
 INFO
 INFO Target URL:          http://0.0.0.0:8000/
 INFO Max time (s):        20
@@ -93,27 +93,24 @@ INFO Concurrency level:   10
 INFO Agent:               keepalive
 INFO Requests per second: 2000
 INFO
-INFO Completed requests:  5589
-INFO Total errors:        492
-INFO Total time:          20.006069541 s
-INFO Requests per second: 279
-INFO Mean latency:        1037.8 ms
+INFO Completed requests:  27364
+INFO Total errors:        0
+INFO Total time:          20.001672077 s
+INFO Requests per second: 1368
+INFO Mean latency:        5.5 ms
 INFO
 INFO Percentage of the requests served within a certain time
-INFO   50%      747 ms
-INFO   90%      2419 ms
-INFO   95%      2872 ms
-INFO   99%      4934 ms
-INFO  100%      7192 ms (longest request)
-INFO
-INFO  100%      7192 ms (longest request)
-INFO
-INFO   404:   492 errors
+INFO   50%      4 ms
+INFO   90%      8 ms
+INFO   95%      10 ms
+INFO   99%      16 ms
+INFO  100%      82 ms (longest request)
+INFO Requests: 27364, requests per second: 1597, mean latency: 5 ms
 ```
 
 2. Memory usage
 
-**4.63 Mb**
+**37.44 Mb **
 
 ### Rocket
 
