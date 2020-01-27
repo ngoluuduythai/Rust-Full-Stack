@@ -39,9 +39,9 @@ Webpack Dev server is based on Express. Therefore, prototype with it first. We w
 
 1. The result form loadtest 
 
-No errors but mean latency is problem?
-
 ```console
+// No errors but mean latency is problem?
+
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
 INFO Requests: 1769, requests per second: 354, mean latency: 578.9 ms
 INFO Requests: 5636, requests per second: 774, mean latency: 786.2 ms
@@ -67,9 +67,7 @@ INFO   99%      1974 ms
 INFO  100%      8906 ms (longest request)
 ```
 
-2. Memory usage
-
-**113 MB**
+2. Memory usage(**113 MB**)
 
 ### Warp
 
@@ -79,9 +77,9 @@ INFO  100%      8906 ms (longest request)
 
 1. The result from loadtest
 
-The best result.
-
 ```console
+// The best result.
+
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
 INFO Requests: 3832, requests per second: 767, mean latency: 8.3 ms
 INFO Requests: 11189, requests per second: 1473, mean latency: 5.2 ms
@@ -105,12 +103,9 @@ INFO   90%      8 ms
 INFO   95%      10 ms
 INFO   99%      16 ms
 INFO  100%      82 ms (longest request)
-INFO Requests: 27364, requests per second: 1597, mean latency: 5 ms
 ```
 
-2. Memory usage
-
-**37.44 Mb**
+2. Memory usage(**37.44 Mb**)
 
 ### Rocket
 
@@ -130,9 +125,9 @@ Use it to test you can deploy React Rocket application to AWS. Then, you should 
 
 1. The result from loadtest
 
-No errors and very fast.
-
 ```console
+// No errors and fast with the lowest memory usage.
+
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
 INFO Requests: 1797, requests per second: 360, mean latency: 43.2 ms
 INFO Requests: 4855, requests per second: 612, mean latency: 34.4 ms
@@ -158,9 +153,7 @@ INFO   99%      75 ms
 INFO  100%      110 ms (longest request)
 ```
 
-2. Memory usage.
-
-**13 Mb**
+2. Memory usage(**13 Mb**)
 
 ### Restify
 
@@ -176,9 +169,9 @@ INFO  100%      110 ms (longest request)
 
 1. The reults from loadtest 
 
-It is very fast and no errors. It is made for this.
-
 ```console
+// It is one of the fastest and no errors. It is made for this.
+
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
 INFO Requests: 3820, requests per second: 772, mean latency: 9 ms
 INFO Requests: 11529, requests per second: 1541, mean latency: 5 ms
@@ -204,9 +197,7 @@ INFO   99%      19 ms
 INFO  100%      339 ms (longest request)
 ```
 
-2. Memory usage
-
-**231 Mb**
+2. Memory usage(**231 Mb**)
 
 ### Vibora
 
