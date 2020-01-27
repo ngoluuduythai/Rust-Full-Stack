@@ -11,8 +11,8 @@ use warp::{self, path, Filter};
 use console::Style;
 
 // How to serve React or other single page apps?
-// 1. Serve production index.html file from them for speicfic routes.
-// 2. Find how to serve files in public/ or static/.
+// 1. Find how to serve files in public/ or static/.
+// 2. Serve production index.html file from them for speicfic routes.
 
 #[tokio::main]
 async fn main() {
@@ -20,32 +20,22 @@ async fn main() {
     let blue = Style::new()
         .blue();
 
-    // 1. $curl 0.0.0.0:8000
+    // 1. $curl 0.0.0.0:8000/public/index.html
+    // dir already includes GET / ...
+    // (You don't have to prefix warp::get("/")" here)
+    let public_files = warp::fs::dir("./public/");
+
+    // 2. $curl 0.0.0.0:8000
     // p.s If you liked the React app here and need a help with it,
     // please contact me with https://www.linkedin.com/in/steady-learner-3151b7164/
     // (I can work with React, Node, Rust, Python, (Golang))
-
-    // When I visit the 0.0.0.0:8000, it shows the React app.
-    // $curl 0.0.0.0:8000 also return index.html page
     let single_page_app = warp::get()
         .and(warp::path::end())
         .and(warp::fs::file("./public/index.html"));
 
-    // 2. $curl 0.0.0.0:8000/public/index.html
-    // dir already includes GET / ...
-    // (You don't have to prefix warp::get("/")" here)
-
-    // They all work manually visiting them with local browser and CURL.
-    // $curl 0.0.0.0:8000/vendors.js
-    // $curl 0.0.0.0:8000/main.js
-    // $curl 0.0.0.0:8000/main.css
-    // $curl 0.0.0.0:8000/main.index.html
-    // $curl 0.0.0.0:8000/src/images/rust-chat-app.png
-    let public_files = warp::fs::dir("./public/");
-
     // GET / => ./public/index.html
     // GET /public/... => ./public/..
-    let routes = single_page_app.or(public_files);
+    let routes = public_files.or(single_page_app);
 
     println!("\nRust Warp Server ready at {}", blue.apply_to(&target));
     println!("Use $curl http://0.0.0.0:8000 to test the end point.");
