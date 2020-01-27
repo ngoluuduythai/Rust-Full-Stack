@@ -78,7 +78,7 @@ INFO  100%      8906 ms (longest request)
 1. The result from loadtest
 
 ```console
-// The best result.
+// The best result considering its low memory usage compared to Golang
 
 INFO Requests: 0, requests per second: 0, mean latency: 0 ms
 INFO Requests: 3832, requests per second: 767, mean latency: 8.3 ms
