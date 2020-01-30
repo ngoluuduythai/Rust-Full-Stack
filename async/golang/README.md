@@ -11,6 +11,7 @@
 
 ## Read
 
+* [Seven stages of becoming a Golang programmer](https://opensource.com/article/17/9/seven-stages-becoming-go-programmer)
 * [The behavior of channles](https://www.ardanlabs.com/blog/2017/10/the-behavior-of-channels.html) 
 
 ## Blueprint
